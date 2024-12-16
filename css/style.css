@@ -1,11 +1,133 @@
 /* Modern and Beautiful CSS Design */
 @import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap");
+
 :root {
+  /* Colors */
   --primary-color: #ff6b6b;
+  --primary-hover: #ff5252;
   --secondary-color: #4ecdc4;
   --dark-color: #2d2d2d;
   --light-color: #f7f7f7;
+  
+  /* Transitions */
   --transition: all 0.3s ease;
+  
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  
+  /* Borders & Shadows */
+  --border-radius-sm: 15px;
+  --border-radius-lg: 30px;
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Overlays */
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+  --overlay-light: rgba(255, 255, 255, 0.95);
+}
+
+/* Utility Classes */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.text-center { text-align: center; }
+
+/* Base Components */
+.card {
+  background: white;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.secondary-btn:hover {
+  background-color: white;
+  color: var(--dark-color);
+}
+
+/* Navigation */
+.navbar {
+  background-color: var(--overlay-light);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.navbar-container {
+  composes: container;
+  composes: flex-between;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  composes: flex-center;
+}
+
+.navbar li {
+  margin: 0 1.5rem;
+}
+
+.navbar a {
+  color: var(--dark-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+}
+
+.navbar a:hover {
+  color: var(--primary-color);
+  background-color: rgba(255, 107, 107, 0.1);
 }
 
 /* Global Styles */
@@ -133,71 +255,165 @@ body {
 }
 
 /* Hero Section */
-.hero {
+.hero-base {
   height: 80vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://images.unsplash.com/photo-1514933651103-005eec06c04b")
-      no-repeat center center;
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-base::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(var(--overlay-dark), var(--overlay-dark));
+}
+
+.hero {
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1514933651103-005eec06c04b");
+}
+
+.services-hero {
+  height: 50vh;
+  background-image: url("../images/services-hero.jpg");
 }
 
 .hero-content {
+  position: relative;
+  z-index: 1;
   max-width: 800px;
-  padding: 2rem;
+  padding: var(--spacing-lg);
 }
 
 .hero h1 {
   font-size: 3.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-md);
   font-weight: 600;
-  font-family: "Alexandria", sans-serif;
 }
 
 .hero p {
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-lg);
 }
 
 .hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
+  composes: flex-center;
+  gap: var(--spacing-md);
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 500;
+/* Grid Layouts */
+.grid {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+.grid-2 {
+  composes: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  composes: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    padding: var(--spacing-md);
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 100;
+  }
+
+  .navbar ul {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: var(--overlay-light);
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .navbar li {
+    margin: 0;
+  }
+
+  .navbar a {
+    font-size: 1.2rem;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Overlays */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-dark);
+  opacity: 0;
   transition: var(--transition);
 }
 
-.primary-btn {
-  background-color: var(--primary-color);
+.overlay:hover {
+  opacity: 1;
+}
+
+.overlay-content {
+  position: relative;
   color: white;
+  padding: var(--spacing-lg);
 }
 
-.primary-btn:hover {
-  background-color: #ff5252;
-  transform: translateY(-2px);
+.overlay-content p {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-md);
 }
 
-.secondary-btn {
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
+/* Product Cards */
+.product-card {
+  composes: card;
+  position: relative;
 }
 
-.secondary-btn:hover {
-  background-color: white;
-  color: var(--dark-color);
+.product-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.product-content {
+  padding: var(--spacing-lg);
 }
 
 /* Features Section */
@@ -833,702 +1049,10 @@ footer {
   font-size: 1.2rem;
 }
 
-/* Services Page Styles */
-.services-hero {
-  height: 50vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../images/services-hero.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
 
-.services-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
-.service-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
 
-.service-card:hover {
-  transform: translateY(-10px);
-}
-
-.service-card i {
-  font-size: 3rem;
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
-}
-
-.service-card h3 {
-  color: var(--dark-color);
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.service-card p {
-  color: #666;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.service-card .btn {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background-color: var(--primary-color);
-  color: white;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.service-card .btn:hover {
-  background-color: var(--secondary-color);
-}
-
-.featured-products {
-  background-color: #f9f9f9;
-  padding: 4rem 2rem;
-}
-
-.featured-products h2 {
-  text-align: center;
-  margin-bottom: 3rem;
-  color: var(--dark-color);
-  font-size: 2.5rem;
-}
-
-.product-carousel {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.product-card {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.product-card h3 {
-  padding: 1.5rem 1.5rem 0.5rem;
-  color: var(--dark-color);
-}
-
-.product-card p {
-  padding: 0 1.5rem 1.5rem;
-  color: #666;
-}
-
-.product-card .btn {
-  display: block;
-  margin: 1rem;
-  padding: 0.8rem;
-  text-align: center;
-  background-color: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: background-color 0.3s ease;
-}
-
-.product-card .btn:hover {
-  background-color: var(--secondary-color);
-}
-
-.cta-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../images/cta-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-  padding: 4rem 2rem;
-}
-
-.cta-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.cta-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.cta-buttons .btn {
-  padding: 1rem 2rem;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.primary-btn {
-  background-color: var(--primary-color);
-  color: white;
-}
-
-.secondary-btn {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.primary-btn:hover {
-  background-color: var(--secondary-color);
-}
-
-.secondary-btn:hover {
-  background-color: white;
-  color: var(--dark-color);
-}
-
-@media (max-width: 768px) {
-  .services-hero h1 {
-    font-size: 2rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    padding: 2rem 1rem;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-  }
-
-  .cta-content h2 {
-    font-size: 2rem;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-  }
-
-  .navbar li {
-    margin: 0.5rem 0;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .feature-grid,
-  .special-grid,
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-grid,
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-
-  .about-text,
-  .contact-info {
-    text-align: center;
-  }
-
-  .contact-item {
-    justify-content: center;
-  }
-
-  .auth-form {
-    padding: 2rem;
-  }
-
-  .social-buttons {
-    flex-direction: column;
-  }
-}
-
-/* Product Page Styles */
-.product-hero {
-  position: relative;
-  height: 60vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-    url("https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&h=500");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
-
-.product-hero .hero-content {
-  max-width: 800px;
-  padding: 0 2rem;
-}
-
-.product-hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 1rem;
-  font-weight: 600;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.product-hero p {
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
-  padding: 4rem 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.product-item {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.product-image-wrapper {
-  position: relative;
-  overflow: hidden;
-  height: 300px;
-}
-
-.product-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.product-item:hover .product-image-wrapper img {
-  transform: scale(1.1);
-}
-
-.product-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.product-item:hover .product-overlay {
-  opacity: 1;
-}
-
-.overlay-content {
-  text-align: center;
-  color: white;
-  padding: 2rem;
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-}
-
-.product-item:hover .overlay-content {
-  transform: translateY(0);
-}
-
-.overlay-content p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.product-details {
-  padding: 2rem;
-}
-
-.product-details h2 {
-  color: var(--dark-color);
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.product-details .price {
-  color: var(--primary-color);
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.product-details p {
-  color: #666;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.product-details .btn {
-  display: inline-block;
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-  background-color: var(--primary-color);
-  color: white;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.product-details .btn:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 992px) {
-  .product-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 3rem 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .product-hero {
-    height: 50vh;
-    background-attachment: scroll;
-  }
-
-  .product-image-wrapper {
-    height: 250px;
-  }
-
-  .product-details {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-    padding: 2rem 1rem;
-  }
-
-  .product-image-wrapper {
-    height: 200px;
-  }
-}
-
-/* Fine Dining Page Specific Styles */
-.product-hero {
-  position: relative;
-  height: 80vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-    url("https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&h=500");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  margin-bottom: 4rem;
-}
-
-.hero-content {
-  max-width: 800px;
-  padding: 2rem;
-}
-
-.hero-content h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  opacity: 0;
-  animation: fadeInUp 1s ease forwards;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeInUp 1s ease 0.3s forwards;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: #d4af37;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  opacity: 0;
-  animation: fadeInUp 1s ease 0.6s forwards;
-}
-
-.cta-button:hover {
-  background: #c4a030;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.product-item {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.product-item:hover {
-  transform: translateY(-5px);
-}
-
-.product-image-wrapper {
-  position: relative;
-  padding-top: 75%;
-  overflow: hidden;
-}
-
-.product-image-wrapper img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.product-item:hover .product-image-wrapper img {
-  transform: scale(1.1);
-}
-
-.product-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.product-item:hover .product-overlay {
-  opacity: 1;
-}
-
-.overlay-content {
-  text-align: center;
-  color: #fff;
-  padding: 1rem;
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-}
-
-.product-item:hover .overlay-content {
-  transform: translateY(0);
-}
-
-.product-details {
-  padding: 1.5rem;
-  position: relative;
-}
-
-.category-tag {
-  position: absolute;
-  top: -12px;
-  left: 1.5rem;
-  background: #d4af37;
-  color: #fff;
-  padding: 0.3rem 1rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.product-details h2 {
-  font-family: "Playfair Display", serif;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.price {
-  color: #d4af37;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.rating {
-  color: #ffd700;
-  margin-bottom: 1rem;
-}
-
-.rating span {
-  color: #666;
-  margin-left: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.action-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.btn.primary {
-  background: #d4af37;
-  color: #fff;
-  flex: 2;
-}
-
-.btn.secondary {
-  background: transparent;
-  border: 1px solid #d4af37;
-  color: #d4af37;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.testimonials {
-  background: #f9f9f9;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.testimonial {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.quote {
-  color: #d4af37;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.author {
-  color: #666;
-  font-style: italic;
-  margin: 1rem 0;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  .action-buttons {
-    flex-direction: column;
-  }
-
-  .testimonial {
-    padding: 1rem;
-  }
-}
 
 /* Fine Dining Page Styles */
 .product-hero {
@@ -1538,7 +1062,6 @@ footer {
     url("https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&h=500");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
