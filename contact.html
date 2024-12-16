@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اتصل بنا - جورميت هافن</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body dir="rtl">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="logo">جورميت هافن</a>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="menu.html">المنيو</a></li>
+          <li><a href="about.html">عنّا</a></li>
+          <li><a href="reservation.html">الحجز</a></li>
+          <li><a href="contact.html" class="active">اتصل بنا</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <header class="contact-hero">
+      <div class="hero-content">
+        <h1>اتصل بنا</h1>
+        <p>نحن هنا للاستماع إليك</p>
+      </div>
+    </header>
+
+    <!-- Contact Content -->
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>تواصل معنا</h2>
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>الموقع</h3>
+              <p>123 شارع جورميت<br />نيويورك، NY 10001</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h3>الهاتف</h3>
+              <p>(555) 123-4567</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>البريد الإلكتروني</h3>
+              <p>info@gourmethaven.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="far fa-clock"></i>
+            <div>
+              <h3>ساعات العمل</h3>
+              <p>الاثنين - الجمعة: 11ص - 10م<br />السبت - الأحد: 10ص - 11م</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>أرسل لنا رسالة</h3>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="name">الاسم الكامل</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">رقم الهاتف</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="subject">الموضوع</label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
+          <div class="form-group">
+            <label for="message">الرسالة</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn primary-btn">إرسال الرسالة</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>الموقع</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 123 شارع جورميت</p>
+          <p>نيويورك، NY 10001</p>
+        </div>
+        <div class="footer-section">
+          <h3>ساعات العمل</h3>
+          <p><i class="far fa-clock"></i> الاثنين - الجمعة: 11ص - 10م</p>
+          <p>السبت - الأحد: 10ص - 11م</p>
+        </div>
+        <div class="footer-section">
+          <h3>الاتصال</h3>
+          <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+          <p><i class="fas fa-envelope"></i> info@gourmethaven.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 جورميت هافن. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+  </body>
+</html>

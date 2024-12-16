@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Gourmet Haven</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="logo">Gourmet Haven</a>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="reservation.html">Reservation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="auth-container" data-aos="fade-up">
+      <div class="auth-form">
+        <h2>Welcome Back</h2>
+        <p class="auth-description">Sign in to access your account</p>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="auth-button">
+            <i class="fas fa-sign-in-alt"></i> Sign In
+          </button>
+
+          <div class="auth-links">
+            <a href="forgot-password.html">
+              <i class="fas fa-key"></i> Forgot Password?
+            </a>
+            <p style="margin-top: 1rem">
+              Don't have an account? <a href="register.html">Sign Up</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+
+      // Hamburger menu functionality
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".navbar ul");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll(".navbar a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        });
+      });
+
+      // Form submission
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          // Email validation
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address");
+            return;
+          }
+
+          // Password validation
+          if (password.length < 6) {
+            alert("Password must be at least 6 characters long");
+            return;
+          }
+
+          // Show success message (in a real app, this would make an API call)
+          alert("Login successful!");
+          this.reset();
+        });
+    </script>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Location</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Gourmet Street</p>
+          <p>New York, NY 10001</p>
+        </div>
+        <div class="footer-section">
+          <h3>Hours</h3>
+          <p><i class="far fa-clock"></i> Mon-Fri: 11am-10pm</p>
+          <p>Sat-Sun: 10am-11pm</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+          <p><i class="fas fa-envelope"></i> info@gourmethaven.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Gourmet Haven. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

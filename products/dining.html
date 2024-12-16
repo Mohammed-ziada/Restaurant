@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="اختبر تجربة تناول الطعام الرفيعة في جورو هافن مع قوائم تذوقنا المميزة وتجارب الطهي الحصرية."
+    />
+    <title>تناول الطعام الرفيع - جورو هافن | تجربة تناول طعام فاخرة</title>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- إضافة مكتبة AOS للرسوم المتحركة عند التمرير -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body dir="rtl">
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="../index.html" class="logo">جورو هافن</a>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul>
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="../menu.html">القائمة</a></li>
+          <li><a href="../about.html">حول</a></li>
+          <li><a href="../reservation.html" class="active">الحجز</a></li>
+          <li><a href="../contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- قسم البطل للمنتج -->
+    <header class="product-hero" data-aos="fade-down">
+      <div class="hero-content">
+        <h1>تجربة تناول الطعام الفاخرة</h1>
+        <p>مأكولات فاخرة تم إعدادها بشغف</p>
+        <a href="../reservation.html" class="cta-button">احجز تجربتك</a>
+      </div>
+    </header>
+
+    <!-- شبكة المنتجات -->
+    <!-- <section class="product-grid">
+      <div class="product-item" id="tasting-menu" data-aos="fade-up">
+        <div class="product-image-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1625008522323-e44099b7d1c3?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjg0OXwwfDF8c2VhcmNofDJ8fGZpbmUgdGVzdGluZ3xlbnwwfDB8fHww&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            alt="قائمة التذوق المميزة"
+            loading="lazy"
+          />
+          <div class="product-overlay">
+            <div class="overlay-content">
+              <p>اختبر أفضل مجموعة من الأطباق لدينا</p>
+              <a href="#" class="btn">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-details">
+          <span class="category-tag">مميز</span>
+          <h2>قائمة التذوق المميزة</h2>
+          <p class="price">$150 للشخص</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(124 مراجعة)</span>
+          </div>
+          <p>
+            رحلة مكونة من سبع أطباق عبر أبرز إبداعات طاهينا، مع مكونات موسمية
+            وعرض فني.
+          </p>
+          <div class="action-buttons">
+            <a href="../reservation.html" class="btn primary">احجز الآن</a>
+            <button
+              class="btn secondary share-btn"
+              onclick="shareExperience('قائمة التذوق المميزة')"
+            >
+              <i class="fas fa-share-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-image-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1605101272340-8c5c5b2b33b7?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjg0OXwwfDF8c2VhcmNofDQzfHxkaXNrZWRqdWlhdGVzfGVufDB8fDB8fHwxNjg0NTY5OTUy&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            alt="تجربة مشروب الفواكه الطازجة"
+            loading="lazy"
+          />
+          <div class="product-overlay">
+            <div class="overlay-content">
+              <p>استمتع بمشروبات الفواكه الطازجة</p>
+              <a href="#" class="btn">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-details">
+          <span class="category-tag">مشروبات</span>
+          <h2>تجربة مشروب الفواكه الطازجة</h2>
+          <p class="price">$50 للشخص</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(56 مراجعة)</span>
+          </div>
+          <p>مشروبات فواكه طبيعية وطازجة تناسب كل الأذواق.</p>
+          <div class="action-buttons">
+            <a href="../reservation.html" class="btn primary">احجز الآن</a>
+            <button
+              class="btn secondary share-btn"
+              onclick="shareExperience('تجربة مشروب الفواكه الطازجة')"
+            >
+              <i class="fas fa-share-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-image-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1532635245-cbbab5422fd7?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjg0OXwwfDF8c2VhcmNofDJ8fGZpbmUgdGVzdGluZ3xlbnwwfDB8fHww&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            alt="طاولة الشيف"
+            loading="lazy"
+          />
+          <div class="product-overlay">
+            <div class="overlay-content">
+              <p>تناول الطعام حصريًا على طاولة الشيف</p>
+              <a href="#" class="btn">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-details">
+          <span class="category-tag">حصري</span>
+          <h2>تجربة طاولة الشيف</h2>
+          <p class="price">$250 للشخص</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(23 مراجعة)</span>
+          </div>
+          <p>
+            تجربة تناول طعام حميمة على طاولة الشيف الحصرية مع قائمة طعام مخصصة.
+          </p>
+          <div class="action-buttons">
+            <a href="../reservation.html" class="btn primary">احجز طاولتك</a>
+            <button
+              class="btn secondary share-btn"
+              onclick="shareExperience('تجربة طاولة الشيف')"
+            >
+              <i class="fas fa-share-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-image-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1575339773779-6cdaf268d4a4?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjg0OXwwfDF8c2VhcmNofDQ2fHxmaXNoIHNob2VwfGVufDB8fDB8fHwxNjg0NTY5OTUy&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            alt="عروض المأكولات البحرية"
+            loading="lazy"
+          />
+          <div class="product-overlay">
+            <div class="overlay-content">
+              <p>استمتع بعروض المأكولات البحرية لدينا</p>
+              <a href="#" class="btn">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-details">
+          <span class="category-tag">مأكولات بحرية</span>
+          <h2>عروض المأكولات البحرية</h2>
+          <p class="price">$175 للشخص</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(42 مراجعة)</span>
+          </div>
+          <p>
+            مجموعة فاخرة من المأكولات البحرية الطازجة المعدة بتأثيرات البحر
+            الأبيض المتوسط.
+          </p>
+          <div class="action-buttons">
+            <a href="../reservation.html" class="btn primary">احجز الآن</a>
+            <button
+              class="btn secondary share-btn"
+              onclick="shareExperience('عروض المأكولات البحرية')"
+            >
+              <i class="fas fa-share-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-image-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1569889482-1a6f9149539c?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjg0OXwwfDF8c2VhcmNofDg5fHx2ZWdldGFyaWFuIHByb2R1Y3RzfGVufDB8fDB8fHwxNjg0NTY5OTUy&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+            alt="تجربة الطعام النباتي"
+            loading="lazy"
+          />
+          <div class="product-overlay">
+            <div class="overlay-content">
+              <p>مذاق نباتي فاخر</p>
+              <a href="#" class="btn">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-details">
+          <span class="category-tag">نباتي</span>
+          <h2>تجربة الطعام النباتي</h2>
+          <p class="price">$120 للشخص</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(63 مراجعة)</span>
+          </div>
+          <p>
+            قائمة نباتية رائعة مع خيارات صحية ومغذية، مليئة بالنكهات
+            الاستثنائية.
+          </p>
+          <div class="action-buttons">
+            <a href="../reservation.html" class="btn primary">احجز الآن</a>
+            <button
+              class="btn secondary share-btn"
+              onclick="shareExperience('تجربة الطعام النباتي')"
+            >
+              <i class="fas fa-share-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <section class="product-grid">
+      <div class="product-item" id="tasting-menu" data-aos="fade-up">
+        <div class="product-image-wrapper">
+          <img
+            src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&h=500"
+            alt="قائمة التذوق المميزة"
+            loading="lazy"
+          />
+
+          <div class="product-overlay">
+            <div class="overlay-content">
+              <p>اختبر أفضل مجموعة من الأطباق لدينا</p>
+              <a href="#" class="btn">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-details">
+          <span class="category-tag">مميز</span>
+          <h2>قائمة التذوق المميزة</h2>
+          <p class="price">$150 للشخص</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(124 مراجعة)</span>
+          </div>
+          <p>
+            رحلة مكونة من سبع أطباق عبر أبرز إبداعات طاهينا، مع مكونات موسمية
+            وعرض فني.
+          </p>
+          <div class="action-buttons">
+            <a href="../reservation.html" class="btn primary">احجز الآن</a>
+            <button
+              class="btn secondary share-btn"
+              onclick="shareExperience('قائمة التذوق المميزة')"
+            >
+              <i class="fas fa-share-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-image-wrapper">
+          <img
+            src="https://images.pexels.com/photos/1405766/pexels-photo-1405766.jpeg?auto=compress&cs=tinysrgb&h=500"
+            alt="تجربة مشروب الفواكه الطازجة"
+            loading="lazy"
+          />
+
+          <div class="product-overlay">
+            <div class="overlay-content">
+              <p>استمتع بمشروبات الفواكه الطازجة</p>
+              <a href="#" class="btn">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-details">
+          <span class="category-tag">مشروبات</span>
+          <h2>تجربة مشروب الفواكه الطازجة</h2>
+          <p class="price">$50 للشخص</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(56 مراجعة)</span>
+          </div>
+          <p>مشروبات فواكه طبيعية وطازجة تناسب كل الأذواق.</p>
+          <div class="action-buttons">
+            <a href="../reservation.html" class="btn primary">احجز الآن</a>
+            <button
+              class="btn secondary share-btn"
+              onclick="shareExperience('تجربة مشروب الفواكه الطازجة')"
+            >
+              <i class="fas fa-share-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-image-wrapper">
+          <img
+            src="https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&h=500"
+            alt="طاولة الشيف"
+            loading="lazy"
+          />
+
+          <div class="product-overlay">
+            <div class="overlay-content">
+              <p>تناول الطعام حصريًا على طاولة الشيف</p>
+              <a href="#" class="btn">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-details">
+          <span class="category-tag">حصري</span>
+          <h2>تجربة طاولة الشيف</h2>
+          <p class="price">$250 للشخص</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(23 مراجعة)</span>
+          </div>
+          <p>
+            تجربة تناول طعام حميمة على طاولة الشيف الحصرية مع قائمة طعام مخصصة.
+          </p>
+          <div class="action-buttons">
+            <a href="../reservation.html" class="btn primary">احجز طاولتك</a>
+            <button
+              class="btn secondary share-btn"
+              onclick="shareExperience('تجربة طاولة الشيف')"
+            >
+              <i class="fas fa-share-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-image-wrapper">
+          <img
+            src="https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&h=500"
+            alt="عروض المأكولات البحرية"
+            loading="lazy"
+          />
+
+          <div class="product-overlay">
+            <div class="overlay-content">
+              <p>استمتع بعروض المأكولات البحرية لدينا</p>
+              <a href="#" class="btn">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-details">
+          <span class="category-tag">مأكولات بحرية</span>
+          <h2>عروض المأكولات البحرية</h2>
+          <p class="price">$175 للشخص</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(42 مراجعة)</span>
+          </div>
+          <p>
+            مجموعة فاخرة من المأكولات البحرية الطازجة المعدة بتأثيرات البحر
+            الأبيض المتوسط.
+          </p>
+          <div class="action-buttons">
+            <a href="../reservation.html" class="btn primary">احجز الآن</a>
+            <button
+              class="btn secondary share-btn"
+              onclick="shareExperience('عروض المأكولات البحرية')"
+            >
+              <i class="fas fa-share-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-image-wrapper">
+          <img
+            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&h=500"
+            alt="تجربة الطعام النباتي"
+            loading="lazy"
+          />
+
+          <div class="product-overlay">
+            <div class="overlay-content">
+              <p>مذاق نباتي فاخر</p>
+              <a href="#" class="btn">اعرف المزيد</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-details">
+          <span class="category-tag">نباتي</span>
+          <h2>تجربة الطعام النباتي</h2>
+          <p class="price">$120 للشخص</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(63 مراجعة)</span>
+          </div>
+          <p>
+            قائمة نباتية رائعة مع خيارات صحية ومغذية، مليئة بالنكهات
+            الاستثنائية.
+          </p>
+          <div class="action-buttons">
+            <a href="../reservation.html" class="btn primary">احجز الآن</a>
+            <button
+              class="btn secondary share-btn"
+              onclick="shareExperience('تجربة الطعام النباتي')"
+            >
+              <i class="fas fa-share-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الشهادات -->
+    <section class="testimonials" data-aos="fade-up">
+      <div class="testimonial-slider">
+        <div class="testimonial">
+          <p>
+            "كانت تجربتي في جورو هافن رائعة! الطعام لذيذ، الجو مذهل، والخدمة
+            استثنائية. بالتأكيد سأعود قريبًا."
+          </p>
+          <span>- أحمد</span>
+        </div>
+        <!-- يمكنك إضافة المزيد من الشهادات هنا -->
+      </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer class="footer">
+      <div class="footer-container">
+        <p>جورو هافن © 2024 - جميع الحقوق محفوظة.</p>
+        <p>العنوان: 123 شارع الطهاة، القاهرة، مصر</p>
+        <p>ساعات العمل: 12:00 ظهرًا - 10:00 مساءً</p>
+      </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+      // تفعيل AOS
+      AOS.init();
+
+      // دالة مشاركة التجربة
+      function shareExperience(experience) {
+        if (navigator.share) {
+          navigator.share({
+            title: "تجربة تناول الطعام في جورو هافن",
+            text: "تعرف على تجربة " + experience + " في جورو هافن.",
+            url: window.location.href,
+          });
+        } else {
+          alert("مشاركة هذه التجربة غير مدعومة في متصفحك.");
+        }
+      }
+    </script>
+  </body>
+</html>

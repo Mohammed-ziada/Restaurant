@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>احجز طاولة - جورميت هافن</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body dir="rtl">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="logo">جورميت هافن</a>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="menu.html">المنيو</a></li>
+          <li><a href="about.html">عنّا</a></li>
+          <li><a href="reservation.html" class="active">الحجز</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Reservation Hero Section -->
+    <header class="reservation-hero" data-aos="fade">
+      <div class="hero-content">
+        <h1 data-aos="fade-up">احجز طاولتك</h1>
+        <p data-aos="fade-up" data-aos-delay="100">
+          انضم إلينا لتجربة طعام لا تُنسى
+        </p>
+      </div>
+    </header>
+
+    <!-- Reservation Form Section -->
+    <section class="reservation-section">
+      <div
+        class="reservation-container"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div class="reservation-info">
+          <h2>تناول الطعام في جورميت هافن</h2>
+          <p>استمتع بمأكولات استثنائية في أجواء راقية. يرجى ملاحظة:</p>
+          <ul>
+            <li data-aos="fade-right" data-aos-delay="300">
+              <i class="fas fa-clock"></i> خدمة العشاء تبدأ الساعة 5:00 مساءً
+            </li>
+            <li data-aos="fade-right" data-aos-delay="350">
+              <i class="fas fa-users"></i> يمكننا استيعاب مجموعات تصل إلى 12
+              شخصاً
+            </li>
+            <li data-aos="fade-right" data-aos-delay="400">
+              <i class="fas fa-calendar-alt"></i> الحجز متاح حتى 30 يوماً مقدماً
+            </li>
+            <li data-aos="fade-right" data-aos-delay="450">
+              <i class="fas fa-utensils"></i> يمكننا تلبية متطلبات الطعام الخاصة
+            </li>
+            <li data-aos="fade-right" data-aos-delay="500">
+              <i class="fas fa-glass-cheers"></i> الترحيب بالفعاليات الخاصة
+              والاحتفالات
+            </li>
+            <li data-aos="fade-right" data-aos-delay="550">
+              <i class="fas fa-info-circle"></i> ملابس كاجوال ذكية مطلوبة
+            </li>
+          </ul>
+        </div>
+        <form
+          id="reservationForm"
+          class="reservation-form"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">الاسم الكامل</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="اسمك الكامل"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">البريد الإلكتروني</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="البريد@الإلكتروني.com"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">رقم الهاتف</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                placeholder="رقم هاتفك"
+              />
+            </div>
+            <div class="form-group">
+              <label for="partySize">عدد الأشخاص</label>
+              <select id="partySize" name="partySize" required>
+                <option value="">اختر العدد</option>
+                <option value="1">شخص واحد</option>
+                <option value="2">شخصان</option>
+                <option value="3">3 أشخاص</option>
+                <option value="4">4 أشخاص</option>
+                <option value="5">5 أشخاص</option>
+                <option value="6">6 أشخاص</option>
+                <option value="7-8">7-8 أشخاص</option>
+                <option value="9-10">9-10 أشخاص</option>
+                <option value="11-12">11-12 شخصاً</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">التاريخ</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="form-group">
+              <label for="time">الوقت</label>
+              <select id="time" name="time" required>
+                <option value="">اختر الوقت</option>
+                <option value="17:00">5:00 مساءً</option>
+                <option value="17:30">5:30 مساءً</option>
+                <option value="18:00">6:00 مساءً</option>
+                <option value="18:30">6:30 مساءً</option>
+                <option value="19:00">7:00 مساءً</option>
+                <option value="19:30">7:30 مساءً</option>
+                <option value="20:00">8:00 مساءً</option>
+                <option value="20:30">8:30 مساءً</option>
+                <option value="21:00">9:00 مساءً</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="occasion">مناسبة خاصة</label>
+              <select id="occasion" name="occasion">
+                <option value="">اختر المناسبة (اختياري)</option>
+                <option value="birthday">عيد ميلاد</option>
+                <option value="anniversary">ذكرى الزواج</option>
+                <option value="business">عشاء عمل</option>
+                <option value="other">أخرى</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="seating">المكان المفضل</label>
+              <select id="seating" name="seating">
+                <option value="">اختر التفضيل (اختياري)</option>
+                <option value="indoor">داخل المطعم</option>
+                <option value="outdoor">خارج المطعم</option>
+                <option value="bar">البار</option>
+                <option value="private">غرفة خاصة</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="special-requests">طلبات خاصة</label>
+            <textarea
+              id="special-requests"
+              name="special-requests"
+              rows="3"
+              placeholder="أي متطلبات غذائية خاصة، أو حساسيات؟"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-reserve">
+            <i class="fas fa-calendar-check"></i> تأكيد الحجز
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><i class="fas fa-map-marker-alt"></i> الموقع</h3>
+          <p>شارع جورميت 123</p>
+          <p>نيويورك، NY 10001</p>
+        </div>
+        <div class="footer-section">
+          <h3><i class="far fa-clock"></i> ساعات العمل</h3>
+          <p>الإثنين-الجمعة: 11ص-10م</p>
+          <p>السبت-الأحد: 10ص-11م</p>
+        </div>
+        <div class="footer-section">
+          <h3><i class="fas fa-phone"></i> الاتصال</h3>
+          <p>(555) 123-4567</p>
+          <p>info@gourmethaven.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 جورميت هافن. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+
+      // Hamburger menu functionality
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".navbar ul");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll(".navbar a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        });
+      });
+
+      // Form validation and submission
+      document
+        .getElementById("reservationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Basic form validation
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const date = document.getElementById("date").value;
+          const time = document.getElementById("time").value;
+
+          if (!name || !email || !phone || !date || !time) {
+            alert("يرجى ملء جميع الحقول المطلوبة");
+            return;
+          }
+
+          // Email validation
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            alert("يرجى إدخال بريد إلكتروني صالح");
+            return;
+          }
+
+          // Set minimum date to today
+          const today = new Date();
+          const thirtyDaysFromNow = new Date();
+          thirtyDaysFromNow.setDate(today.getDate() + 30);
+
+          const selectedDate = new Date(date);
+          if (selectedDate < today) {
+            alert("يرجى اختيار تاريخ مستقبلي");
+            return;
+          }
+
+          if (selectedDate > thirtyDaysFromNow) {
+            alert("الحجوزات متاحة حتى 30 يومًا مقدماً فقط");
+            return;
+          }
+
+          // If all validation passes
+          alert("شكراً لطلب الحجز! سنؤكد حجزك قريباً.");
+          this.reset();
+        });
+
+      // Set minimum date to today and maximum date to 30 days from now
+      const dateInput = document.getElementById("date");
+      const today = new Date().toISOString().split("T")[0];
+      const thirtyDaysFromNow = new Date();
+      thirtyDaysFromNow.setDate(thirtyDaysFromNow.getDate() + 30);
+      const maxDate = thirtyDaysFromNow.toISOString().split("T")[0];
+
+      dateInput.setAttribute("min", today);
+      dateInput.setAttribute("max", maxDate);
+    </script>
+  </body>
+</html>

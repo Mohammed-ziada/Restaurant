@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>المنيو - اسم المطعم</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body dir="rtl">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="logo">جورميت هافن</a>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="menu.html">المنيو</a></li>
+          <li><a href="about.html">عنّا</a></li>
+          <li><a href="reservation.html" class="active">الحجز</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Menu Filtering Section -->
+    <section class="menu-filter">
+      <h2>منيو لذيذ</h2>
+      <select id="categoryFilter">
+        <option value="all">جميع الأصناف</option>
+        <option value="appetizers">المقبلات</option>
+        <option value="main">الأطباق الرئيسية</option>
+        <option value="desserts">الحلويات</option>
+      </select>
+    </section>
+
+    <!-- Menu Items Section -->
+    <section class="menu-items">
+      <div class="item" data-category="appetizers">
+        <img
+          src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9"
+          alt="سلطة قيصر"
+        />
+        <div class="item-content">
+          <h3>سلطة قيصر</h3>
+          <p>خس روماني طازج، توست محمص، جبن بارميزان، وصلصة قيصر الخاصة.</p>
+          <p class="price">$12.99</p>
+        </div>
+      </div>
+
+      <div class="item" data-category="main">
+        <img
+          src="https://images.unsplash.com/photo-1467003909585-2f8a72700288"
+          alt="سلمون مشوي"
+        />
+        <div class="item-content">
+          <h3>سلمون مشوي</h3>
+          <p>
+            سلمون أتلانتيكي طازج مشوي بإتقان، يقدم مع خضروات موسمية وصلصة الزبدة
+            بالليمون.
+          </p>
+          <p class="price">$28.99</p>
+        </div>
+      </div>
+
+      <div class="item" data-category="main">
+        <img
+          src="https://images.unsplash.com/photo-1513104890138-7c749659a591"
+          alt="برجر فاخر"
+        />
+        <div class="item-content">
+          <h3>برجر فاخر</h3>
+          <p>
+            شريحة لحم أنغوس مع بصل مكرمل، جبن شيدر معتق، وصلصة منزلية على خبز
+            بريوش.
+          </p>
+          <p class="price">$18.99</p>
+        </div>
+      </div>
+
+      <div class="item" data-category="desserts">
+        <img
+          src="https://images.unsplash.com/photo-1551024506-0bccd828d307"
+          alt="كيك الشوكولاتة"
+        />
+        <div class="item-content">
+          <h3>كيك الشوكولاتة الداكنة</h3>
+          <p>طبقات غنية من كيك الشوكولاتة مع كريمة الشوكولاتة وتوت طازج.</p>
+          <p class="price">$9.99</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p class="text-center">&copy; 2024 اسم المطعم. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+      // Hamburger menu functionality
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".navbar ul");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll(".navbar a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>
